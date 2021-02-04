@@ -22,6 +22,7 @@ import {
 	SEARCH_BING,
 	SEARCH_YAHOO,
 	SEARCH_STARTPAGE,
+	SEARCH_STARTPAGE_DUPLICATE,
 	SEARCH_DUCKDUCK_GO,
 	SEARCH_ECOSIA,
 	SEARCH_EKORU,
@@ -100,7 +101,7 @@ class ChooseDefaultSearchView extends Component {
 		const otherOptions = response
 			.map(item => item.name)
 			// Two versions of the Startpage identifier are included for safety as it's unclear which version is / will be used
-			.filter(name => ![SEARCH_YAHOO, GLOW_BROWSER_SEARCH_GET_NAME, STARTPAGE_BROWSER_SEARCH_GET_NAME, SEARCH_STARTPAGE, SEARCH_BING].includes(name));
+			.filter(name => ![SEARCH_YAHOO, GLOW_BROWSER_SEARCH_GET_NAME, STARTPAGE_BROWSER_SEARCH_GET_NAME, SEARCH_STARTPAGE, SEARCH_STARTPAGE_DUPLICATE, SEARCH_BING].includes(name));
 
 		this.setState(state => ({
 			...state,
